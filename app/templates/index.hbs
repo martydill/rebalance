@@ -1,0 +1,146 @@
+{{#if show_rebalancing}}
+  <h1>My Rebalancing</h1>
+{{else}}
+  <h1>My Assets</h1>
+
+  <form class="form-inline" role="form">
+    <div class="form-group">
+      <label class="sr-only" for="new-asset">Asset Type</label>
+      {{input
+      type="text"
+      class="asset-field-large form-control"
+      id="new-asset"
+      placeholder="Asset Type (Large Cap, Bonds, Emerging Markets, etc.)"
+      value=newAssetName
+      action="createAsset"}}
+    </div>
+    <div class="form-group">
+      <label class="sr-only" for="new-asset-value">$ Value</label>
+      {{#number-field
+      class="asset-field form-control"
+      id="new-asset-value"
+      placeholder="$ Value"
+      numericValue=newAssetValue
+      action="createAsset"
+      }}{{/number-field}}
+    </div>
+    <div class="form-group">
+      <label class="sr-only" for="new-asset-allocation">$ Value</label>
+      {{#number-field
+      class="asset-field form-control"
+      id="new-asset-allocation"
+      placeholder="Target %"
+      numericValue=newAssetAllocation
+      action="createAsset"
+      }}{{/number-field}}
+    </div>
+    <div {{bind-attr class=":btn :btn-info can_create::disabled"}} {{action 'createAsset' }}>Add Asset</div>
+  </form>
+{{/if}}
+
+<div>
+
+  {{#if show_rebalancing}}
+
+  <div>
+    <label for='only_purchases'>
+      {{input type='checkbox' checked=only_purchases id='only_purchases'}}
+      Only use Buys, not Sells
+    </label>
+
+    <div {{bind-attr class=":rebalance-amount only_purchases::disabled"}}>
+      {{#number-field
+      class="buy-amount-asset-field "
+      id="buy_amount"
+      placeholder="$"
+      numericValue=buy_amount
+      maxlength=9
+      }}
+      {{/number-field}}
+      <label for="buy_amount">
+        Funds To Add
+      </label>
+    </div>
+
+  </div>
+
+  <div {{bind-attr class=":btn :btn-success cant_rebalance:disabled"}} {{action 'edit'}}>Back To My Assets</div>
+
+  {{else}}
+
+<div class="rebalance-controls">
+  <div {{bind-attr class=":btn :btn-success cant_rebalance:disabled"}} {{action 'rebalance'}}>Rebalance!</div>
+
+
+  {{#if show_asset_allocation_warning}}
+  <div>Your asset allocation should add to 100% - right now it adds to {{total_allocation}}</div>
+  {{/if}}
+</div>
+
+{{/if}}
+
+</div>
+
+{{#if show_rebalancing}}
+<h3>To rebalance, you need to:</h3>
+
+<table class="table">
+  {{#each asset in assets_to_rebalance}}
+  <tr>
+    <td>
+      <h3>
+        {{#if asset.buy}}
+        <span class="buy">Buy</span>
+        {{else}}
+        <span class="sell">Sell</span>
+        {{/if}}
+
+        ${{asset.rebalance_dollar_value}} of {{asset.name}}
+      </h3>
+    </td>
+  </tr>
+  {{/each}}
+</table>
+
+<div class="row">
+  <div class="col-md-6">
+    <div id="before-chart"></div>
+  </div>
+  <div class="col-md-6">
+    <div id="after-chart"></div>
+  </div>
+</div>
+{{else}}
+<div class="asset-list">
+  <form class="form-inline" role="form">
+    {{#each asset in model}}
+    <div class="asset-list-item">
+
+      <div class="form-group">
+        <label class="sr-only" for="new-asset">Asset Type</label>
+        {{input
+        type="text"
+        class="asset-field-medium form-control"
+        value=asset.name}}
+      </div>
+      <div class="form-group input-group">
+        <label class="sr-only" for="new-asset-value">$ Value</label>
+        <div class="input-group-addon">$</div>
+        {{#number-field numericValue=asset.value class="asset-field form-control"}}{{/number-field}}
+      </div>
+      <div class="form-group input-group">
+        <label class="sr-only" for="new-asset-allocation">$ Value</label>
+        <div class="input-group-addon">%</div>
+        {{#number-field numericValue=asset.desired_allocation class="asset-field form-control"}}{{/number-field}}
+      </div>
+
+      <div class="btn btn-warning" {{action 'removeAsset' asset}}>Remove</div>
+
+    </div>
+
+    {{/each}}
+
+  </form>
+</div>
+{{/if}}
+

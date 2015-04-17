@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+    <title>Rebalance.in - Fast, Easy, Free Portfolio Rebalancing</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {{content-for 'head'}}
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <!-- Plugins CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    {{content-for 'head-footer'}}
+</head>
+
+<body data-spy="scroll">
+    {{content-for 'body'}}
+
+    <script src="assets/vendor.js"></script>
+    <script src="assets/rebalance.js"></script>
+
+    <!-- ******HEADER****** -->
+    <header id="header" class="header navbar-static-top">
+        <div class="container">
+            <h1 class="logo pull-left">
+                <a class="scrollto" href="#promo">
+                    <span class="logo-title">Rebalance.in</span>
+                </a>
+            </h1><!--//logo-->
+            <nav id="main-nav" class="main-nav navbar-right" role="navigation">
+                <div class="navbar-header">
+                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button><!--//nav-toggle-->
+                </div><!--//navbar-header-->
+                <div class="navbar-collapse collapse" id="navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active nav-item sr-only"><a class="scrollto" href="#promo">Home</a></li>
+                        <li class="nav-item"><a class="scrollto" href="#about">About</a></li>
+                        <li class="nav-item last"><a class="scrollto" href="#contact">Contact</a></li>
+                    </ul><!--//nav-->
+                </div><!--//navabr-collapse-->
+            </nav><!--//main-nav-->
+        </div>
+    </header><!--//header-->
+
+    <!-- ******PROMO****** -->
+    <section id="promo" class="promo section offset-header">
+        <div class="container text-center">
+            <h2 class="title">Rebalance<span class="highlight">.in</span></h2>
+            <p class="intro">Easy, free, and secure portfolio rebalancing</p>
+            <div class="btns">
+                <a class="btn btn-cta-secondary scrollto" href="#rebalance-app">Get Started</a>
+                <a class="btn btn-cta-primary scrollto" href="#about">Learn More</a>
+            </div>
+            <ul class="meta list-inline">
+
+            </ul><!--//meta-->
+        </div><!--//container-->
+        <section class="social-media" >
+            <div class="social-media-inner text-center" style="min-height:150px;">
+              <div class="app" id="rebalance-app" style="display:none">
+                <div id="ember-application-root"></div>
+              </div>
+              <div id="loading">
+                <div style="">
+                  <h3>Loading...</h3>
+                  <img src="ajax-loader.gif">
+                </div>
+              </div>
+            </div>
+        </section>
+    </section><!--//promo-->
+
+    <!-- ******ABOUT****** -->
+    <section id="about" class="about section">
+        <div class="container">
+            <h2 class="title text-center">What is portfolio rebalancing? What is Rebalance.in?</h2>
+            <p class="intro text-center">Rebalancing your portfolio is the process of buying or selling assets to make your portfolio's asset allocation match your desired allocation. Rebalance.in is a tool to calculate exactly how to rebalance. </p>
+
+            <div class="row">
+                <div class="item col-md-4 col-sm-6 col-xs-12">
+                    <div class="icon-holder">
+                        <i class="fa fa-check"></i>
+                    </div>
+                    <div class="content">
+                        <h3 class="sub-title">Easy</h3>
+                        <p>Just enter in your assets, their current values, and your desired allocations. We'll do the rest!</p>
+                    </div><!--//content-->
+                </div><!--//item-->
+                <div class="item col-md-4 col-sm-6 col-xs-12">
+                    <div class="icon-holder">
+                        <i class="fa fa-lock"></i>
+                    </div>
+                    <div class="content">
+                        <h3 class="sub-title">Secure</h3>
+                        <p>All calculations are performed in your web browser. Your information is never transmitted to our servers.</p>
+                    </div><!--//content-->
+                </div><!--//item-->
+                <div class="item col-md-4 col-sm-6 col-xs-12">
+                    <div class="icon-holder">
+                        <i class="fa fa-money"></i>
+                    </div>
+                    <div class="content">
+                        <h3 class="sub-title">Free</h3>
+                        <p>It's completely free. Because your money should stay in your portfolio.</p>
+                    </div><!--//content-->
+                </div><!--//item-->
+
+            </div><!--//row-->
+
+            <p class="intro text-center">Want to learn more about portfolios and portfolio rebalancing? <a href="http://www.reddit.com/r/personalfinance/">Reddit's Personal Finance Subreddit</a> is a great place to start.</p>
+        </div><!--//container-->
+    </section><!--//about-->
+
+    <!-- ******CONTACT****** -->
+    <section id="contact" class="contact section has-pattern">
+        <div class="container">
+            <div class="contact-inner">
+                <h2 class="title  text-center">Contact</h2>
+                <div class="author-message">
+                    <div class="profile">
+                        <img class="img-responsive" src="assets/images/profile.jpeg" alt="" />
+                    </div><!--//profile-->
+                    <div class="speech-bubble">
+                        <h3 class="sub-title">Hope you enjoyed the site</h3>
+                        <p>If you have any questions or comments, I'd love to hear from you!</p>
+                        <p>Have a portfolio rebalancing success story? Want to be featured on this site? Let me know!</p>
+                        <p>Cheers,</p>
+                        <div class="source">
+                            <span class="name">Marty</span>
+                            <br />
+                            <span class="title">Software Engineer</span>
+                        </div><!--//source-->
+                    </div><!--//speech-bubble-->
+                </div><!--//author-message-->
+                <div class="clearfix"></div>
+                <div class="info text-center">
+                    <ul class="social-icons list-inline">
+                        <li><a href="https://twitter.com/codemarty" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="mailto:hello@rebalance.in?subject=Rebalance.in Website Contact"><i class="fa fa-envelope"></i></a></li>
+                    </ul>
+                </div><!--//info-->
+            </div><!--//contact-inner-->
+        </div><!--//container-->
+    </section><!--//contact-->
+
+    <!-- ******FOOTER****** -->
+    <footer class="footer">
+        <div class="container text-center">
+        <div>
+         <small class="copyright">Copyright (c) 2014 <a href="http://code-ninja.org">Marty Dill</a></small>
+         </div>
+            <small class="copyright">Awesome bootstrap theme designed by <a href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a></small>
+         <div class="legal">Legal Stuff: The information on this site is provided <b>AS IS</b> in the hope that it will be useful. Use at your own risk. You are responsible for all of your own investment decisions. Do not make decisions based solely on the information provided here. We are not responsible for any errors in calculation, valuation, or anything else. When in doubt, seek the advice of a financial advisor or a Certifed Financial Planner. Past performance is not indicative of future returns.</div>
+        </div><!--//container-->
+    </footer><!--//footer-->
+
+    <!-- Javascript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+ <!--  <script type="text/x-handlebars" data-template-name="home">
+  <div>
+  {{#if show_rebalancing}}
+  <h1>My Rebalancing</h1>
+  {{else}}
+  <h1>My Assets</h1>
+
+  <form class="form-inline" role="form">
+    <div class="form-group">
+        <label class="sr-only" for="new-asset">Asset Type</label>
+         {{input
+          type="text"
+          class="asset-field-large form-control"
+          id="new-asset"
+          placeholder="Asset Type (Large Cap, Bonds, Emerging Markets, etc.)"
+          value=newAssetName
+          action="createAsset"}}
+    </div>
+    <div class="form-group">
+      <label class="sr-only" for="new-asset-value">$ Value</label>
+       {{#view App.NumberField
+      class="asset-field form-control"
+      id="new-asset-value"
+      placeholder="$ Value"
+      numericValue=newAssetValue
+      action="createAsset"
+      }}
+      {{/view}}
+    </div>
+    <div class="form-group">
+      <label class="sr-only" for="new-asset-allocation">$ Value</label>
+       {{#view App.NumberField
+        class="asset-field form-control"
+        id="new-asset-allocation"
+        placeholder="Target %"
+        numericValue=newAssetAllocation
+        action="createAsset"
+        }}
+        {{/view}}
+    </div>
+    <div {{bind-attr class=":btn :btn-info can_create::disabled"}} {{action 'createAsset' }}>Add Asset</div>
+  </form>
+  {{/if}}
+  <div>
+
+  {{#if show_rebalancing}}
+
+    <div>
+      <label for='only_purchases'>
+        {{input type='checkbox' checked=only_purchases id='only_purchases'}}
+        Only use Buys, not Sells
+      </label>
+
+      <div {{bind-attr class=":rebalance-amount only_purchases::disabled"}}>
+        {{#view App.NumberField
+        class="buy-amount-asset-field "
+        id="buy_amount"
+        placeholder="$"
+        numericValue=buy_amount
+        maxlength=9
+        }}
+        {{/view}}
+        <label for="buy_amount">
+          Funds To Add
+        </label>
+      </div>
+      </div>
+
+    </div>
+    <div {{bind-attr class=":btn :btn-success cant_rebalance:disabled"}} {{action 'edit'}}>Back To My Assets</div>
+
+  {{else}}
+
+    <div class="rebalance-controls">
+      <div {{bind-attr class=":btn :btn-success cant_rebalance:disabled"}} {{action 'rebalance'}}>Rebalance!</div>
+
+
+      {{#if show_asset_allocation_warning}}
+        <div>Your asset allocation should add to 100% - right now it adds to {{total_allocation}}</div>
+      {{/if}}
+    </div>
+
+  {{/if}}
+
+  </div>
+  </div>
+
+  {{#if show_rebalancing}}
+    <h3>To rebalance, you need to:</h3>
+
+    <table class="table">
+      {{#each asset in assets_to_rebalance}}
+        <tr>
+          <td>
+          <h3>
+          {{#if asset.buy}}
+            <span class="buy">Buy</span>
+          {{else}}
+            <span class="sell">Sell</span>
+          {{/if}}
+
+          ${{asset.rebalance_dollar_value}} of {{asset.name}}
+          </h3>
+          </td>
+        </tr>
+      {{/each}}
+    </table>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div id="before-chart"></div>
+      </div>
+      <div class="col-md-6">
+        <div id="after-chart"></div>
+      </div>
+    </div>
+  {{else}}
+    <div class="asset-list">
+      <form class="form-inline" role="form">
+      {{#each asset in model}}
+        <div class="asset-list-item">
+
+          <div class="form-group">
+            <label class="sr-only" for="new-asset">Asset Type</label>
+            {{input
+            type="text"
+            class="asset-field-medium form-control"
+            value=asset.name}}
+          </div>
+          <div class="form-group input-group">
+            <label class="sr-only" for="new-asset-value">$ Value</label>
+            <div class="input-group-addon">$</div>
+            {{#view App.NumberField numericValue=asset.value class="asset-field form-control"}} {{/view}}
+          </div>
+          <div class="form-group input-group">
+            <label class="sr-only" for="new-asset-allocation">$ Value</label>
+            <div class="input-group-addon">%</div>
+            {{#view App.NumberField numericValue=asset.desired_allocation class="asset-field form-control"}} {{/view}}
+          </div>
+
+          <div class="btn btn-warning" {{action 'removeAsset' asset}}>Remove</div>
+
+        </div>
+
+      {{/each}}
+
+      </form>
+    </div>
+  {{/if}}
+
+  </script> -->
+
+  <script src="./handlebars.min.js"></script>
+  <script type="text/javascript" src="./jquery.scrollTo.min.js"></script>
+  <script src="./d3.min.js"></script>
+  <script src="./d3pie.min.js"></script>
+  <script type="text/javascript">
+  jQuery(document).ready(function($) {
+
+    /* ======= ScrollTo ======= */
+    $('a.scrollto').on('click', function(e){
+
+      //store hash
+      var target = this.hash;
+
+      e.preventDefault();
+
+      $('body').scrollTo(target, 800, {offset: -70, 'axis':'y'});
+
+      //Collapse mobile menu after clicking
+      if ($('.navbar-collapse').hasClass('in')){
+        $('.navbar-collapse').removeClass('in').addClass('collapse');
+      }
+    });
+  });
+  </script>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-37597597-9', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+
+    {{content-for 'body-footer'}}
+</body>
+</html>
+

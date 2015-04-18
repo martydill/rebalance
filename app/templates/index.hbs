@@ -43,20 +43,19 @@
   {{#if show_rebalancing}}
 
   <div>
-    <label for='only_purchases'>
+    <label class="hoverable" for='only_purchases'>
       {{input type='checkbox' checked=only_purchases id='only_purchases'}}
       Only use Buys, not Sells
     </label>
 
     <div {{bind-attr class=":rebalance-amount only_purchases::disabled"}}>
-      {{#number-field
-      class="buy-amount-asset-field "
-      id="buy_amount"
-      placeholder="$"
-      numericValue=buy_amount
-      maxlength=9
+      {{number-field
+        class="buy-amount-asset-field "
+        id="buy_amount"
+        placeholder="$"
+        numericValue=buy_amount
+        maxlength=9
       }}
-      {{/number-field}}
       <label for="buy_amount">
         Funds To Add
       </label>
@@ -71,9 +70,8 @@
 <div class="rebalance-controls">
   <div {{bind-attr class=":btn :btn-success cant_rebalance:disabled"}} {{action 'rebalance'}}>Rebalance!</div>
 
-
   {{#if show_asset_allocation_warning}}
-  <div>Your asset allocation should add to 100% - right now it adds to {{total_allocation}}</div>
+    <div>Your asset allocation should add to 100% - right now it adds to {{total_allocation}}%</div>
   {{/if}}
 </div>
 
@@ -90,9 +88,9 @@
     <td>
       <h3>
         {{#if asset.buy}}
-        <span class="buy">Buy</span>
+          <span class="buy">Buy</span>
         {{else}}
-        <span class="sell">Sell</span>
+          <span class="sell">Sell</span>
         {{/if}}
 
         ${{asset.rebalance_dollar_value}} of {{asset.name}}

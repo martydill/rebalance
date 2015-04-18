@@ -671,7 +671,9 @@ pre code {
 .sell {
   color: red;
 }
-
+.hoverable {
+  cursor: pointer;
+}
 @media (max-width: 450px) {
   .promo .title {
     font-size: 40px;

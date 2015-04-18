@@ -23,31 +23,24 @@ var Asset = DS.Model.extend({
 
 Asset.reopenClass({
   FIXTURES: [
-   {
-   id: 1,
-   name: 'Small Cap',
-   value: 1000,
-   desired_allocation: 35,
- },
- {
-   id: 2,
-   name: 'Large Cap',
-   value: 3000,
-   desired_allocation: 50
- },
-  {
-   id: 3,
-   name: 'Short term bonds',
-   value: 735.11,
-   desired_allocation: 5
- },
-   {
-   id: 4,
-   name: 'International equities',
-   value: 7363.1,
-   desired_allocation: 10
- },
-
+    {
+     id: 1,
+     name: 'Domestic Equity',
+     value: 10000,
+     desired_allocation: 30,
+    },
+    {
+      id: 2,
+      name: 'International Equity',
+      value: 10000,
+      desired_allocation: 50
+    },
+    {
+      id: 3,
+      name: 'Bonds',
+      value: 10000,
+      desired_allocation: 20
+    }
   ]
 });
 
